@@ -1,5 +1,5 @@
 /**
- * DevFix - Turn Coding Errors into Understandable Solutions
+ * AlgoTester - Turn Coding Errors into Understandable Solutions
  * 4-Step Interactive Developer Tool Engine
  */
 
@@ -287,7 +287,7 @@ try {
 }
 
 // Application Controller
-class DevFixApp {
+class AlgoTesterApp {
   constructor() {
     this.cacheDom();
     this.bindEvents();
@@ -507,7 +507,7 @@ class DevFixApp {
     const code = this.dom.resCodeSolution.textContent;
     const prevention = this.dom.resPreventionTip.textContent;
 
-    const fullText = `### DevFix Diagnostic Report\n**Error:** ${error}\n\n**Plain English Explanation:**\n${plain}\n\n**Recommended Solution:**\n\`\`\`\n${code}\n\`\`\`\n\n**Prevention:**\n${prevention}`;
+    const fullText = `### AlgoTester Diagnostic Report\n**Error:** ${error}\n\n**Plain English Explanation:**\n${plain}\n\n**Recommended Solution:**\n\`\`\`\n${code}\n\`\`\`\n\n**Prevention:**\n${prevention}`;
 
     navigator.clipboard.writeText(fullText).then(() => {
       this.showToast("Full diagnosis copied to clipboard!");
@@ -525,5 +525,5 @@ class DevFixApp {
 
 // Instantiate on DOM ready
 document.addEventListener("DOMContentLoaded", () => {
-  window.devFixApp = new DevFixApp();
+  window.algoTesterApp = new AlgoTesterApp();
 });

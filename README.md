@@ -1,8 +1,8 @@
-# DevFix: Turn Coding Errors into Understandable Solutions
+# AlgoTester: Turn Coding Errors into Understandable Solutions
 
 > **"Turn coding errors into understandable solutions."**
 
-**DevFix** is a web-based developer tool engineered to solve confusing error messages, stack traces, and compiler exceptions through an intuitive, 4-step workflow.
+**AlgoTester** is a web-based developer tool engineered to solve confusing error messages, stack traces, and compiler exceptions through an intuitive, 4-step workflow.
 
 ---
 
@@ -55,7 +55,7 @@ Open **[http://localhost:8080](http://localhost:8080)** in your browser.
 
 ```text
 geeksforgeeks/
-├── index.html     # DevFix Web UI & 4-step workflow structure
+├── index.html     # AlgoTester Web UI & 4-step workflow structure
 ├── style.css      # Developer-first glassmorphic styling & responsive design
 ├── app.js         # Core diagnosis engine, error database & interactive logic
 ├── code.py        # Python algorithmic solutions (GFG practice)

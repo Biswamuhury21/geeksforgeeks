@@ -1,4 +1,4 @@
-/* DevFix Design System & Color Tokens */
+/* AlgoTester Design System & Color Tokens */
 :root {
   --bg-app: #080c14;
   --bg-panel: rgba(15, 23, 42, 0.75);
@@ -292,7 +292,7 @@ body.light-theme .brand-title {
   width: 100%;
 }
 
-.devfix-grid {
+.algotester-grid {
   display: grid;
   grid-template-columns: 480px 1fr;
   gap: 1.5rem;
@@ -300,7 +300,7 @@ body.light-theme .brand-title {
 }
 
 @media (max-width: 1024px) {
-  .devfix-grid {
+  .algotester-grid {
     grid-template-columns: 1fr;
   }
 }
