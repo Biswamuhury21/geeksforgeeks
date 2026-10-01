@@ -35,14 +35,39 @@
           <label for="sample-select" class="sample-label">Quick Sample:</label>
           <select id="sample-select" class="sample-dropdown">
             <option value="" disabled selected>Select an example error...</option>
-            <option value="py_index">Python • IndexError (list index out of range)</option>
-            <option value="py_type">Python • TypeError (can only concatenate str)</option>
-            <option value="py_key">Python • KeyError in dictionary</option>
-            <option value="js_undef">JavaScript • TypeError (Cannot read properties of undefined)</option>
-            <option value="js_func">JavaScript • TypeError (... is not a function)</option>
-            <option value="java_npe">Java • NullPointerException</option>
-            <option value="cpp_segfault">C++ • Segmentation Fault (core dumped)</option>
-            <option value="git_conflict">Git / CLI • Merge Conflict</option>
+            <optgroup label="Python">
+              <option value="py_index">IndexError (list index out of range)</option>
+              <option value="py_type">TypeError (can only concatenate str)</option>
+              <option value="py_key">KeyError in dictionary</option>
+              <option value="py_attr">AttributeError (NoneType)</option>
+              <option value="py_indent">IndentationError</option>
+            </optgroup>
+            <optgroup label="JavaScript / TypeScript">
+              <option value="js_undef">TypeError (Cannot read properties of undefined)</option>
+              <option value="js_func">TypeError (... is not a function)</option>
+              <option value="js_ref">ReferenceError (is not defined)</option>
+              <option value="js_promise">Unhandled Promise Rejection</option>
+            </optgroup>
+            <optgroup label="Java">
+              <option value="java_npe">NullPointerException</option>
+              <option value="java_oob">ArrayIndexOutOfBoundsException</option>
+            </optgroup>
+            <optgroup label="C / C++">
+              <option value="cpp_segfault">Segmentation Fault (core dumped)</option>
+              <option value="cpp_undefined">Undefined reference to main</option>
+            </optgroup>
+            <optgroup label="Go">
+              <option value="go_bounds">panic: index out of range</option>
+            </optgroup>
+            <optgroup label="Rust">
+              <option value="rust_borrow">cannot borrow as mutable more than once</option>
+            </optgroup>
+            <optgroup label="SQL">
+              <option value="sql_syntax">Syntax error near...</option>
+            </optgroup>
+            <optgroup label="Git / CLI">
+              <option value="git_conflict">Merge Conflict</option>
+            </optgroup>
           </select>
         </div>
         <button id="btn-theme-toggle" class="btn-icon" title="Toggle Theme" aria-label="Toggle Theme">
