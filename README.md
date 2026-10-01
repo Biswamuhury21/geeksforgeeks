@@ -17,19 +17,12 @@
 
 ---
 
-## 🚀 Live Demo & How to Run
+## 🚀 Live Demo
 
-The application runs locally without any extra build dependencies (pure HTML5, CSS3, and JavaScript):
+**[👉 Try AlgoTester Live](https://Biswamuhury21.github.io/geeksforgeeks/)**
 
-```bash
-# Navigate to the workspace
-cd /Users/biswadeepmuhury/geeksforgeeks
+The application is deployed securely via GitHub Pages. It runs entirely on the client-side using pure HTML5, CSS3, and JavaScript, meaning no installation or local server is required to use it!
 
-# Start the local HTTP server
-python3 -m http.server 8080
-```
-
-Open **[http://localhost:8080](http://localhost:8080)** in your browser.
 
 ---
 
