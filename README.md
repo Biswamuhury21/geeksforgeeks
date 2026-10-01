@@ -1,42 +1,53 @@
-# GeeksforGeeks Solutions in Python
+# DevFix: Turn Coding Errors into Understandable Solutions
 
-A repository containing solutions and practice implementations for various problem-solving questions and algorithms from **GeeksforGeeks**.
+> **"Turn coding errors into understandable solutions."**
 
----
-
-## 📌 Problems Covered
-
-| # | Problem | Description | Function / Code Reference |
-|---|---|---|---|
-| 1 | **Find the Largest Element in an Array** | Iterates through an array to find and return the maximum element. | [`find_largest()`](code.py#L4-L14) |
-| 2 | **Find the Greatest Between Three Integers** | Compares three user-provided integers using conditional statements to find the largest value. | [`greatest_int()`](code.py#L27-L40) |
+**DevFix** is a web-based developer tool engineered to solve confusing error messages, stack traces, and compiler exceptions through an intuitive, 4-step workflow.
 
 ---
 
-## 🚀 Getting Started
+## 🎯 The 4-Step Problem Statement
 
-### Prerequisites
+| Step | Stage | Description |
+|:---:|---|---|
+| **Step 1** | **Enter an Error** | Paste any raw stack trace, exception, compiler warning, or runtime crash message (or test with 1-click Quick Samples). |
+| **Step 2** | **Select a Programming Language** | Choose from Python, JavaScript / TypeScript, Java, C++, Go, Rust, or SQL (with Auto-Detect capability). |
+| **Step 3** | **Understand the Problem** | Breaks down the error into **Plain English**, isolates the **Root Cause**, and highlights **Common Triggers**. |
+| **Step 4** | **Provide a Suggested Solution** | Delivers an actionable, tested **Code Fix**, side-by-side comparison, copyable snippet, and **Proactive Prevention Tips**. |
 
-- Python 3.x installed on your system.
+---
 
-To check your Python version, run:
+## 🚀 Live Demo & How to Run
+
+The application runs locally without any extra build dependencies (pure HTML5, CSS3, and JavaScript):
+
 ```bash
-python3 --version
-```
-
-### Running the Code
-
-Clone or navigate to the repository directory:
-```bash
+# Navigate to the workspace
 cd /Users/biswadeepmuhury/geeksforgeeks
+
+# Start the local HTTP server
+python3 -m http.server 8080
 ```
 
-Run the script directly using Python:
-```bash
-python3 code.py
-```
+Open **[http://localhost:8080](http://localhost:8080)** in your browser.
 
-Follow the prompts in the terminal to input data for the problems.
+---
+
+## 🛠️ Key Features
+
+- **Multi-Language Knowledge Engine**:
+  - **Python**: `IndexError: list index out of range`, `TypeError`, `KeyError`, `AttributeError`, `IndentationError`, etc.
+  - **JavaScript / TS**: `TypeError: Cannot read properties of undefined`, `... is not a function`, Promise rejections.
+  - **Java**: `NullPointerException`, `ArrayIndexOutOfBoundsException`, `ClassCastException`.
+  - **C++**: `Segmentation fault (core dumped)`, pointer dereference faults, bounds violations.
+  - **Git & CLI**: Merge conflicts, unmerged paths, command errors.
+  - **Heuristic Fallback Analyzer**: Formats and analyzes any arbitrary custom error log.
+- **Developer-Centric UX**:
+  - Dark mode glassmorphic UI with responsive layout.
+  - Quick Samples selector for testing with 1 click.
+  - Step Progress tracker visually linking Steps 1 → 2 → 3 → 4.
+  - One-click copy buttons for solutions with toast feedback.
+  - Light/Dark theme toggle.
 
 ---
 
@@ -44,13 +55,22 @@ Follow the prompts in the terminal to input data for the problems.
 
 ```text
 geeksforgeeks/
-├── code.py        # Python implementations of problems
-└── README.md      # Repository documentation
+├── index.html     # DevFix Web UI & 4-step workflow structure
+├── style.css      # Developer-first glassmorphic styling & responsive design
+├── app.js         # Core diagnosis engine, error database & interactive logic
+├── code.py        # Python algorithmic solutions (GFG practice)
+└── README.md      # Repository & challenge documentation
 ```
 
 ---
 
-## 💡 Notes & Best Practices
+## 🐍 Python Solutions (`code.py`)
 
-- Functions are structured for reusability and can be tested individually or imported into other modules.
-- New problems and optimized solutions will be continually added as practice progresses.
+This repository also contains solutions for problem-solving questions:
+1. **Find Largest Element in an Array** ([`find_largest`](code.py#L4-L14))
+2. **Find Greatest Between Three Integers** ([`greatest_int`](code.py#L27-L40))
+
+Run via terminal:
+```bash
+python3 code.py
+```

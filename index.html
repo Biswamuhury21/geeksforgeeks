@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevFix - Turn Coding Errors into Understandable Solutions</title>
+  <meta name="description" content="DevFix is a developer tool that analyzes error messages, explains them in plain English, and provides actionable code fixes in 4 simple steps.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand">
+        <div class="logo-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
+            <line x1="12" y1="9" x2="12" y2="13"></line>
+            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+          </svg>
+        </div>
+        <div>
+          <div class="brand-badge-wrap">
+            <h1 class="brand-title">DevFix</h1>
+            <span class="version-tag">v1.0</span>
+          </div>
+          <p class="brand-tagline">Turn coding errors into understandable solutions</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <div class="quick-samples-dropdown">
+          <label for="sample-select" class="sample-label">Quick Sample:</label>
+          <select id="sample-select" class="sample-dropdown">
+            <option value="" disabled selected>Select an example error...</option>
+            <option value="py_index">Python • IndexError (list index out of range)</option>
+            <option value="py_type">Python • TypeError (can only concatenate str)</option>
+            <option value="py_key">Python • KeyError in dictionary</option>
+            <option value="js_undef">JavaScript • TypeError (Cannot read properties of undefined)</option>
+            <option value="js_func">JavaScript • TypeError (... is not a function)</option>
+            <option value="java_npe">Java • NullPointerException</option>
+            <option value="cpp_segfault">C++ • Segmentation Fault (core dumped)</option>
+            <option value="git_conflict">Git / CLI • Merge Conflict</option>
+          </select>
+        </div>
+        <button id="btn-theme-toggle" class="btn-icon" title="Toggle Theme" aria-label="Toggle Theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Step Progress Indicator -->
+  <nav class="steps-progress-bar" aria-label="Process Steps">
+    <div class="steps-container">
+      <div class="step-item active" id="step-nav-1">
+        <span class="step-num">1</span>
+        <div class="step-meta">
+          <span class="step-title">Enter Error</span>
+          <span class="step-subtitle">Paste message or trace</span>
+        </div>
+      </div>
+      <div class="step-connector"></div>
+      <div class="step-item active" id="step-nav-2">
+        <span class="step-num">2</span>
+        <div class="step-meta">
+          <span class="step-title">Select Language</span>
+          <span class="step-subtitle">Python, JS, Java, etc.</span>
+        </div>
+      </div>
+      <div class="step-connector"></div>
+      <div class="step-item" id="step-nav-3">
+        <span class="step-num">3</span>
+        <div class="step-meta">
+          <span class="step-title">Understand Problem</span>
+          <span class="step-subtitle">Plain-English breakdown</span>
+        </div>
+      </div>
+      <div class="step-connector"></div>
+      <div class="step-item" id="step-nav-4">
+        <span class="step-num">4</span>
+        <div class="step-meta">
+          <span class="step-title">Suggested Solution</span>
+          <span class="step-subtitle">Code fix & prevention</span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <main class="main-container">
+    <div class="devfix-grid">
+      <!-- Input Column: Steps 1 & 2 -->
+      <section class="input-panel glass-panel" aria-labelledby="input-section-title">
+        <div class="panel-header">
+          <h2 id="input-section-title" class="panel-title">
+            <span class="step-badge">Step 1 & 2</span>
+            Error Input & Context
+          </h2>
+          <button id="btn-clear-input" class="btn-subtle" title="Clear inputs">Clear</button>
+        </div>
+
+        <!-- Step 2: Language Selection (Placed prominent for immediate context) -->
+        <div class="form-group">
+          <label for="language-select" class="form-label">
+            <span class="field-step">STEP 2</span>
+            Programming Language
+          </label>
+          <div class="language-selector-wrap">
+            <select id="language-select" class="form-select">
+              <option value="python" selected>Python (Python 3.x)</option>
+              <option value="javascript">JavaScript / TypeScript (Node / Browser)</option>
+              <option value="java">Java (JVM)</option>
+              <option value="cpp">C / C++</option>
+              <option value="go">Go (Golang)</option>
+              <option value="rust">Rust</option>
+              <option value="sql">SQL / Database</option>
+              <option value="general">Generic / Bash / CLI</option>
+            </select>
+            <button id="btn-detect-lang" class="btn-subtle" title="Auto-detect language from error">Auto-Detect</button>
+          </div>
+        </div>
+
+        <!-- Step 1: Error Input -->
+        <div class="form-group">
+          <div class="label-row">
+            <label for="error-input" class="form-label">
+              <span class="field-step">STEP 1</span>
+              Paste Error Message or Stack Trace
+            </label>
+            <span class="char-count" id="error-char-count">0 characters</span>
+          </div>
+          <div class="textarea-wrapper">
+            <textarea
+              id="error-input"
+              class="form-textarea error-terminal"
+              rows="6"
+              placeholder="Paste your error message or traceback here...&#10;&#10;Example:&#10;IndexError: list index out of range&#10;TypeError: Cannot read properties of undefined (reading 'map')"
+            ></textarea>
+          </div>
+        </div>
+
+        <!-- Optional: Code Context Input -->
+        <div class="form-group">
+          <div class="collapsible-header" id="toggle-code-context">
+            <span class="form-label">
+              <span class="optional-tag">Optional</span>
+              Code Context / Faulty Snippet
+            </span>
+            <span class="chevron-icon" id="code-chevron">▼</span>
+          </div>
+          <div class="collapsible-body" id="code-context-wrap">
+            <textarea
+              id="code-context-input"
+              class="form-textarea code-editor-field"
+              rows="4"
+              placeholder="Paste the relevant line or function where the error occurs (optional)..."
+            ></textarea>
+          </div>
+        </div>
+
+        <!-- Action Button -->
+        <div class="panel-actions">
+          <button id="btn-analyze-error" class="btn btn-primary btn-large">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+            <span>Analyze & Fix Error</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Output Column: Steps 3 & 4 -->
+      <section class="results-panel glass-panel" aria-labelledby="results-section-title">
+        <div class="panel-header">
+          <h2 id="results-section-title" class="panel-title">
+            <span class="step-badge">Step 3 & 4</span>
+            Diagnosis & Solution
+          </h2>
+          <div class="result-actions" id="result-header-actions" style="display: none;">
+            <button id="btn-copy-solution" class="btn-subtle" title="Copy solution to clipboard">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span>Copy Fix</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Empty Placeholder State -->
+        <div class="empty-state" id="empty-state">
+          <div class="empty-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+          </div>
+          <h3>Awaiting Error Input</h3>
+          <p>Paste an error on the left or select a <strong>Quick Sample</strong> above to see the step-by-step problem breakdown and fix.</p>
+        </div>
+
+        <!-- Result Content (Initially Hidden) -->
+        <div class="solution-content" id="solution-content" style="display: none;">
+          <!-- Classification Banner -->
+          <div class="error-classification-banner" id="error-banner">
+            <div class="banner-left">
+              <span class="error-type-tag" id="res-error-type">IndexError</span>
+              <span class="severity-pill" id="res-severity">Medium Severity</span>
+            </div>
+            <div class="banner-right">
+              <span class="lang-tag" id="res-lang-tag">Python</span>
+            </div>
+          </div>
+
+          <!-- STEP 3: Understand the Problem -->
+          <div class="solution-card card-understand">
+            <div class="card-step-badge">
+              <span class="step-circle">3</span>
+              <h3>Understand the Problem</h3>
+            </div>
+            
+            <div class="explain-block">
+              <h4 class="subhead">💡 In Plain English</h4>
+              <p class="plain-english-text" id="res-plain-english"></p>
+            </div>
+
+            <div class="explain-block">
+              <h4 class="subhead">🔍 Root Cause</h4>
+              <p class="root-cause-text" id="res-root-cause"></p>
+            </div>
+
+            <div class="triggers-wrap">
+              <h4 class="subhead">⚠️ Common Triggers</h4>
+              <ul class="triggers-list" id="res-triggers-list"></ul>
+            </div>
+          </div>
+
+          <!-- STEP 4: Provide a Suggested Solution -->
+          <div class="solution-card card-solution">
+            <div class="card-step-badge">
+              <span class="step-circle">4</span>
+              <h3>Suggested Solution</h3>
+            </div>
+
+            <!-- Fix Strategy -->
+            <div class="solution-strategy" id="res-strategy"></div>
+
+            <!-- Code Comparison (Before vs After) -->
+            <div class="code-diff-container">
+              <div class="diff-header">
+                <span>Recommended Code Fix</span>
+                <button id="btn-copy-code" class="btn-copy" title="Copy code">Copy Code</button>
+              </div>
+              <div class="diff-editor">
+                <pre class="code-pre"><code id="res-code-solution" class="language-code"></code></pre>
+              </div>
+            </div>
+
+            <!-- Prevention Checklist -->
+            <div class="prevention-box">
+              <h4 class="subhead">🛡️ Prevention & Pro-Tips</h4>
+              <p id="res-prevention-tip"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast">Copied to clipboard!</div>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <div class="footer-container">
+      <p><strong>DevFix</strong> • Built for developers to debug faster, understand exceptions, and ship clean code.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
