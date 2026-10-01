@@ -36,37 +36,67 @@
           <select id="sample-select" class="sample-dropdown">
             <option value="" disabled selected>Select an example error...</option>
             <optgroup label="Python">
-              <option value="py_index">IndexError (list index out of range)</option>
-              <option value="py_type">TypeError (can only concatenate str)</option>
-              <option value="py_key">KeyError in dictionary</option>
-              <option value="py_attr">AttributeError (NoneType)</option>
-              <option value="py_indent">IndentationError</option>
+              <option value="py_zero">ZeroDivisionError: division by zero</option>
+              <option value="py_index">IndexError: list index out of range</option>
+              <option value="py_key">KeyError: missing dictionary key</option>
+              <option value="py_type">TypeError: unsupported operand / mismatched type</option>
+              <option value="py_attr">AttributeError: 'NoneType' object</option>
+              <option value="py_name">NameError: name is not defined</option>
+              <option value="py_value">ValueError: invalid literal for int()</option>
+              <option value="py_indent">IndentationError: unexpected indent</option>
+              <option value="py_syntax">SyntaxError: invalid syntax</option>
+              <option value="py_recursion">RecursionError: max recursion depth</option>
+              <option value="py_unbound">UnboundLocalError: referenced before assignment</option>
+              <option value="py_file_not_found">FileNotFoundError: [Errno 2]</option>
+              <option value="py_module">ModuleNotFoundError: no module named</option>
             </optgroup>
-            <optgroup label="JavaScript / TypeScript">
-              <option value="js_undef">TypeError (Cannot read properties of undefined)</option>
-              <option value="js_func">TypeError (... is not a function)</option>
-              <option value="js_ref">ReferenceError (is not defined)</option>
-              <option value="js_promise">Unhandled Promise Rejection</option>
+            <optgroup label="C / C++">
+              <option value="cpp_segfault">Segmentation Fault (SIGSEGV core dumped)</option>
+              <option value="cpp_double_free">Double Free / Corruption (SIGABRT)</option>
+              <option value="cpp_fpe">Floating Point Exception (SIGFPE div/0)</option>
+              <option value="cpp_linker">Linker Error: Undefined reference</option>
+              <option value="cpp_out_of_range">std::out_of_range (vector bounds)</option>
+              <option value="cpp_bad_alloc">std::bad_alloc (heap allocation failed)</option>
+              <option value="cpp_stack_overflow">Stack Overflow (deep recursion)</option>
+              <option value="cpp_syntax">Compiler Syntax Error (missing ';')</option>
             </optgroup>
             <optgroup label="Java">
               <option value="java_npe">NullPointerException</option>
+              <option value="java_arithmetic">ArithmeticException: / by zero</option>
               <option value="java_oob">ArrayIndexOutOfBoundsException</option>
-            </optgroup>
-            <optgroup label="C / C++">
-              <option value="cpp_segfault">Segmentation Fault (core dumped)</option>
-              <option value="cpp_undefined">Undefined reference to main</option>
-            </optgroup>
-            <optgroup label="Go">
-              <option value="go_bounds">panic: index out of range</option>
+              <option value="java_class_cast">ClassCastException</option>
+              <option value="java_number_format">NumberFormatException: For input string</option>
+              <option value="java_concurrent_mod">ConcurrentModificationException</option>
+              <option value="java_oom">OutOfMemoryError: Java heap space</option>
+              <option value="java_stack_overflow">StackOverflowError</option>
             </optgroup>
             <optgroup label="Rust">
-              <option value="rust_borrow">cannot borrow as mutable more than once</option>
+              <option value="rust_borrow">error[E0499]: cannot borrow as mutable twice</option>
+              <option value="rust_move">error[E0382]: use of moved value</option>
+              <option value="rust_lifetime">error[E0597]: borrowed value does not live long</option>
+              <option value="rust_panic_bounds">panic: index out of bounds</option>
+              <option value="rust_unwrap_none">panic: Option::unwrap() on None</option>
+              <option value="rust_div_zero">panic: attempt to divide by zero</option>
+            </optgroup>
+            <optgroup label="Go (Golang)">
+              <option value="go_bounds">panic: index out of range</option>
+              <option value="go_nil_pointer">panic: nil pointer dereference</option>
+              <option value="go_deadlock">fatal error: all goroutines asleep (deadlock)</option>
+              <option value="go_div_zero">panic: integer divide by zero</option>
+              <option value="go_nil_map">panic: assignment to entry in nil map</option>
+              <option value="go_unused">compiler: declared and not used</option>
+            </optgroup>
+            <optgroup label="JavaScript / TypeScript">
+              <option value="js_undef">TypeError: Cannot read properties of undefined</option>
+              <option value="js_func">TypeError: ... is not a function</option>
+              <option value="js_ref">ReferenceError: variable is not defined</option>
+              <option value="js_promise">Unhandled Promise Rejection</option>
             </optgroup>
             <optgroup label="SQL">
-              <option value="sql_syntax">Syntax error near...</option>
+              <option value="sql_syntax">SQL Syntax Error (ERROR 1064)</option>
             </optgroup>
             <optgroup label="Git / CLI">
-              <option value="git_conflict">Merge Conflict</option>
+              <option value="git_conflict">Git Merge Conflict</option>
             </optgroup>
           </select>
         </div>

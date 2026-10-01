@@ -28,16 +28,19 @@ The application is deployed securely via GitHub Pages. It runs entirely on the c
 
 ## 🛠️ Key Features
 
-- **Multi-Language Knowledge Engine**:
-  - **Python**: `IndexError: list index out of range`, `TypeError`, `KeyError`, `AttributeError`, `IndentationError`, etc.
-  - **JavaScript / TS**: `TypeError: Cannot read properties of undefined`, `... is not a function`, Promise rejections.
-  - **Java**: `NullPointerException`, `ArrayIndexOutOfBoundsException`, `ClassCastException`.
-  - **C++**: `Segmentation fault (core dumped)`, pointer dereference faults, bounds violations.
+- **Multi-Language Knowledge Engine (45+ Curated Error Diagnoses)**:
+  - **Python**: `ZeroDivisionError: division by zero`, `IndexError: list index out of range`, `KeyError`, `TypeError`, `ValueError`, `AttributeError`, `NameError`, `IndentationError`, `SyntaxError`, `RecursionError`, `UnboundLocalError`, `FileNotFoundError`, `ModuleNotFoundError`.
+  - **C / C++**: `Segmentation fault (SIGSEGV core dumped)`, `Double Free / Corruption (SIGABRT)`, `Floating Point Exception (SIGFPE div/0)`, `Linker Error: Undefined reference`, `std::out_of_range`, `std::bad_alloc`, `Stack Overflow`, Compiler syntax errors.
+  - **Java**: `NullPointerException`, `ArithmeticException: / by zero`, `ArrayIndexOutOfBoundsException`, `ClassCastException`, `NumberFormatException`, `ConcurrentModificationException`, `OutOfMemoryError: Java heap space`, `StackOverflowError`.
+  - **Rust**: `error[E0499]: cannot borrow as mutable more than once`, `error[E0382]: use of moved value`, `error[E0597]: borrowed value does not live long enough`, `panic: index out of bounds`, `panic: Option::unwrap() on None`, `panic: attempt to divide by zero`.
+  - **Go (Golang)**: `panic: runtime error: index out of range`, `panic: nil pointer dereference`, `fatal error: all goroutines are asleep (deadlock)`, `panic: integer divide by zero`, `panic: assignment to entry in nil map`, `compiler: declared and not used`.
+  - **JavaScript / TypeScript**: `TypeError: Cannot read properties of undefined`, `... is not a function`, `ReferenceError`, Unhandled Promise rejections.
+  - **SQL**: Syntax errors (ERROR 1064), malformed queries.
   - **Git & CLI**: Merge conflicts, unmerged paths, command errors.
-  - **Heuristic Fallback Analyzer**: Formats and analyzes any arbitrary custom error log.
+  - **Heuristic Fallback Analyzer**: Formats and analyzes any arbitrary custom error log or stack trace.
 - **Developer-Centric UX**:
   - Dark mode glassmorphic UI with responsive layout.
-  - Quick Samples selector for testing with 1 click.
+  - Quick Samples selector with 1-click test traces for all major languages.
   - Step Progress tracker visually linking Steps 1 → 2 → 3 → 4.
   - One-click copy buttons for solutions with toast feedback.
   - Light/Dark theme toggle.
